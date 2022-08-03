@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Facebook, Github, Instagram, Whatsapp } from "../components/AllSvgs";
+import { darkTheme } from "../components/Themes";
 
 const Icons = styled.div`
   display: flex;
@@ -10,7 +11,8 @@ const Icons = styled.div`
 
   position: fixed;
   bottom: 0;
-  left: 2rem;
+  left: calc(1rem + 2vw);
+  transform: translateX(-50%);
 
   z-index: 3;
 
@@ -22,10 +24,11 @@ const Icons = styled.div`
 const Line = styled.span`
   width: 2px;
   height: 8rem;
-  background-color: ${(props) => props.theme.text};
+  background-color: ${(props) =>
+    props.theme === "dark" ? darkTheme.text : darkTheme.body};
 `;
 
-const SocialIcons = () => {
+const SocialIcons = (props) => {
   return (
     <Icons>
       <div>
@@ -34,7 +37,11 @@ const SocialIcons = () => {
           target="_blank"
           to={{ pathname: "https://wa.link/s1uxa5" }}
         >
-          <Whatsapp width={30} height={25} fill="currentColor" />
+          <Whatsapp
+            width={30}
+            height={25}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+          />
         </NavLink>
       </div>
       <div>
@@ -43,7 +50,11 @@ const SocialIcons = () => {
           target="_blank"
           to={{ pathname: "https://github.com/jia-wei-00" }}
         >
-          <Github width={30} height={25} fill="currentColor" />
+          <Github
+            width={30}
+            height={25}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+          />
         </NavLink>
       </div>
       <div>
@@ -52,7 +63,11 @@ const SocialIcons = () => {
           target="_blank"
           to={{ pathname: "https://www.instagram.com/jia_wei98_/" }}
         >
-          <Instagram width={30} height={25} fill="currentColor" />
+          <Instagram
+            width={30}
+            height={25}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+          />
         </NavLink>
       </div>
       <div>
@@ -61,11 +76,15 @@ const SocialIcons = () => {
           target="_blank"
           to={{ pathname: "https://www.facebook.com/weijia.leong/" }}
         >
-          <Facebook width={30} height={25} fill="currentColor" />
+          <Facebook
+            width={30}
+            height={25}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+          />
         </NavLink>
       </div>
 
-      <Line />
+      <Line theme={props.theme} />
     </Icons>
   );
 };
