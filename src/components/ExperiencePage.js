@@ -19,7 +19,7 @@ const MainContainer = styled.div`
   width: auto;
   height: 100vh;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 1024px) {
     height: auto;
   }
 
@@ -41,7 +41,11 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 10rem;
-  /* width: 850px; */
+  width: 75%;
+
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 const PageTitle = styled.h1`
