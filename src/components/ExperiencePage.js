@@ -41,7 +41,7 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 10rem;
-  width: 850px;
+  /* width: 850px; */
 `;
 
 const PageTitle = styled.h1`

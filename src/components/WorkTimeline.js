@@ -48,6 +48,16 @@ const List = styled.ul`
 const Title = styled.div`
   font-family: "Karla", sans-serif;
   font-weight: 700;
+
+  & > div {
+    padding: 10px;
+    color: ${(props) => props.theme.text};
+
+    &:hover {
+      color: ${(props) => props.theme.body};
+      background: ${(props) => props.theme.text};
+    }
+  }
 `;
 
 const WorkTimeline = (props) => {
@@ -55,7 +65,9 @@ const WorkTimeline = (props) => {
     <TimelineItem>
       <TimelineOppositeContent color="text.secondary">
         <Title>
-          {props.data.name} <br /> ({props.data.date})
+          <div>
+            {props.data.name} <br /> ({props.data.date})
+          </div>
         </Title>
       </TimelineOppositeContent>
       <TimelineSeparator>

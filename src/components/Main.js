@@ -110,6 +110,10 @@ const Center = styled.button`
     animation: ${rotate} infinite 1.5s linear;
     &:hover {
       cursor: pointer;
+      -webkit-animation-play-state: paused;
+      -moz-animation-play-state: paused;
+      -o-animation-play-state: paused;
+      animation-play-state: paused;
     }
   }
 
