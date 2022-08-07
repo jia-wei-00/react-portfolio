@@ -7,9 +7,11 @@ import SocialIcons from "../subComponents/SocialIcons";
 import { NavLink } from "react-router-dom";
 import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
+import WaterWave from "react-water-wave";
+import bg from "../assets/Images/bg.jpg";
 
 const MainContainer = styled.div`
-  background: ${(props) => props.theme.body};
+  /* background: ${(props) => props.theme.body}; */
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -141,6 +143,18 @@ const Main = () => {
   return (
     <MainContainer>
       <DarkDiv click={click} />
+      <WaterWave
+        style={{
+          position: "fixed",
+          width: "100vw",
+          height: "100vh",
+          backgroundSize: "cover",
+          background: `url(${bg}) no-repeat center center fixed`,
+        }}
+        dropRadius={50}
+        perturbance={0.05}
+        interactive={true}
+      />
       <Container>
         <PowerButton />
         <LogoComponents theme={click ? "dark" : "light"} />
@@ -151,6 +165,7 @@ const Main = () => {
             width={click ? 120 : 200}
             height={click ? 120 : 200}
             fill="currentColor"
+            color={click ? "white" : null}
           />
           <span>click here</span>
         </Center>

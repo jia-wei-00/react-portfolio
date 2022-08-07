@@ -32,7 +32,7 @@ const Main = styled.div`
   padding: 2rem;
   margin: 2rem;
   width: 30vw;
-  height: 60vh;
+  height: 65vh;
   z-index: 3;
   line-height: 1.5;
   cursor: pointer;
@@ -44,6 +44,7 @@ const Main = styled.div`
 
   @media only screen and (max-width: 767px) {
     width: 50vw;
+    height: 60vh;
   }
 
   &:hover {
@@ -58,7 +59,7 @@ const Main = styled.div`
 
     @media only screen and (max-width: 1435px) {
       grid-template-columns: 1fr;
-      font-size: calc(5px + 1vw);
+      font-size: 15px;
     }
 
     & > li {
@@ -105,6 +106,11 @@ const Description = styled.div`
   strong {
     margin-bottom: 1rem;
     text-transform: uppercase;
+  }
+
+  ul,
+  p {
+    margin-left: 2rem;
   }
 
   ${Main}:hover & {

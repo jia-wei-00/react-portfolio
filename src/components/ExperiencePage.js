@@ -54,7 +54,7 @@ const PageTitle = styled.h1`
   left: 5rem;
   color: rgba(0, 0, 0, 0.1);
   font-size: calc(5rem + 5vw);
-  z-index: 0;
+  z-index: 1;
 `;
 
 const ExperiencePage = () => {
