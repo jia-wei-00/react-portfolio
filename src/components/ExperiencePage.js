@@ -3,6 +3,7 @@ import styled from "styled-components";
 import img from "../assets/Images/experience-bg.jpg";
 import Timeline from "@mui/lab/Timeline";
 import WorkTimeline from "./WorkTimeline";
+import WaterWave from "react-water-wave";
 
 import LogoComponent from "../subComponents/LogoComponents";
 import SocialIcons from "../subComponents/SocialIcons";
@@ -11,7 +12,7 @@ import PowerButton from "../subComponents/PowerButton";
 import { Experience } from "../data/ExperienceData";
 
 const MainContainer = styled.div`
-  background-image: url(${img});
+  /* background-image: url(${img}); */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -65,6 +66,18 @@ const ExperiencePage = () => {
         <LogoComponent />
         <PowerButton />
         <SocialIcons />
+        <WaterWave
+          style={{
+            position: "fixed",
+            width: "100vw",
+            height: "100vh",
+            backgroundSize: "cover",
+            background: `url(${img}) no-repeat center center fixed`,
+          }}
+          dropRadius={50}
+          perturbance={0.05}
+          interactive={true}
+        />
 
         <Center>
           <Timeline position="alternate">
