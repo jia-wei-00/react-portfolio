@@ -52,28 +52,32 @@ const Main = styled.div`
     background-color: ${(props) => props.theme.text};
   }
 
-  & > ul > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+  & > ul {
+    font-size: calc(1rem + 1vw);
+    & > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10px;
 
-    @media only screen and (max-width: 1435px) {
-      grid-template-columns: 1fr;
-      font-size: 15px;
-    }
-
-    & > li {
-      display: flex;
-      list-style-type: none;
-      align-items: center;
-
-      & > :first-child {
-        padding: 5px;
+      @media only screen and (max-width: 1435px) {
+        grid-template-columns: 1fr;
+        font-size: 15px;
       }
 
-      & > p {
+      & > li {
         display: flex;
-        flex-direction: column;
+        list-style-type: none;
+        align-items: center;
+        font-size: calc(0.6rem + 0.6vw);
+
+        & > :first-child {
+          padding: 5px;
+        }
+
+        & > p {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }

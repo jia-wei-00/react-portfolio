@@ -45,7 +45,7 @@ const Experience = styled(NavLink)`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 50%;
-  right: 0.5vw;
+  right: calc(0.4rem + 0.5vw);
   transform: translate(25%, -50%) rotate(90deg);
   text-decoration: none;
   z-index: 1;
