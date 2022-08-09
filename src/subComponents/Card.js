@@ -26,7 +26,12 @@ const Box = styled.li`
 const Card = (props) => {
   const { id, name, description, tags, demo, github } = props.data;
 
-  return <Box>Work Data Cards</Box>;
+  return (
+    <Box key={id}>
+      <Title>{name}</Title>
+      <Description>{description}</Description>
+    </Box>
+  );
 };
 
 export default Card;
