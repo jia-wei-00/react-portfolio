@@ -53,7 +53,7 @@ const Main = styled.div`
   }
 
   & > ul {
-    font-size: calc(1rem + 1vw);
+    font-size: calc(0.7rem + 1vw);
     & > div {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -68,7 +68,7 @@ const Main = styled.div`
         display: flex;
         list-style-type: none;
         align-items: center;
-        font-size: calc(0.6rem + 0.6vw);
+        font-size: calc(0.6rem + 0.5vw);
 
         & > :first-child {
           padding: 5px;
