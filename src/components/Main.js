@@ -165,7 +165,7 @@ const Main = () => {
             width={click ? 120 : 200}
             height={click ? 120 : 200}
             fill="currentColor"
-            color={click ? "white" : null}
+            // color={click ? "white" : null}
           />
           <span>click here</span>
         </Center>

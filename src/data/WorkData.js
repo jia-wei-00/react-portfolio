@@ -2,9 +2,8 @@ export const Work = [
   {
     id: 1,
     name: "GameFi Project",
-    description:
-      "GameFi project with random rarity character upon open card. All smart contract deploy in Binance Smart Chain Testnet. It is build with react and and use Web3 to connect smart contract.",
-    tags: ["react", "redux", "styledComponents", "solidity", "Web3"],
+    description: "GameFi project with random rarity character upon open card.",
+    tags: ["react", "redux", "Web3", "styledComponents", "solidity"],
 
     demo: "https://jia-wei-00.github.io/blockchain/",
     github: "https://github.com/jia-wei-00/blockchain/",
@@ -13,8 +12,8 @@ export const Work = [
     id: 2,
     name: "Amazon Clone",
     description:
-      "Amazon Clone with add to cart function, create account and login system using react and firebase authentication",
-    tags: ["react", "redux", "firebase"],
+      "Amazon Clone with add to cart function and firebase authentication",
+    tags: ["react", "css", "redux", "firebase"],
 
     demo: "https://jia-wei-00.github.io/amazon-clone/",
     github: "https://github.com/jia-wei-00/amazon-clone/",
@@ -22,41 +21,85 @@ export const Work = [
   {
     id: 3,
     name: "Group Chat App",
-    description:
-      "A group chat app using google authentication to login. Everyone can send messege inside.",
-    tags: ["react", "redux", "firebase"],
+    description: "A group chat app using firebase google authentication.",
+    tags: ["react", "redux", "firebase", "styledComponents"],
 
     demo: "https://jia-wei-00.github.io/group_chat_app/",
     github: "https://github.com/jia-wei-00/group_chat_app/",
   },
   {
     id: 4,
-    name: "Sidebar Menu",
-    description:
-      "A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-    tags: ["react", "styledComponents", "react-router"],
+    name: "Whatsapp Clone",
+    description: "Whatsapp clone using MERN stack.",
+    tags: ["react", "mongodb", "redux", "nodejs", "expressjs"],
 
-    demo: "https://react-sidebar.vercel.app/",
-    github: "https://github.com/codebucks27/react-sidebar",
+    demo: "https://jia-wei-00.github.io/whatsapp-mern/",
+    github: "https://github.com/jia-wei-00/whatsapp-mern/",
   },
   {
     id: 5,
-    name: "Todo App(React + Redux)",
+    name: "PHP Project",
     description:
-      "A todo app build using Redux-toolkit and framer-motion for smooth animations.",
-    tags: ["react", "redux", "framer-motion"],
+      "Create template to view member's specific details, update and delete template. Can download excel sheets for each template created.",
+    tags: ["PHP", "SQL", "Username:admin", "Password:admin"],
 
-    demo: "http://react-redux-todo-app-git-main-codebucks27.vercel.app/",
-    github: "https://github.com/codebucks27/React-Redux-Todo-App",
+    demo: "https://webproject1321.000webhostapp.com/index.php",
+    github: "https://github.com/jia-wei-00/PHP-project/",
   },
   {
     id: 6,
-    name: "Responsive Navigation Menu",
+    name: "Linkedin Clone",
     description:
-      "A reponsive navbar menu component in ReactJS with react-router functionalities. Built from scratch.",
-    tags: ["react", "react-router", "css"],
+      "Linkedin clone with firebase google authentication and post article function.",
+    tags: ["react", "redux", "firebase", "styledComponents"],
 
-    demo: "http://react-responsive-navbar-codebucks27.vercel.app/",
-    github: "https://github.com/codebucks27/React-responsive-navbar",
+    demo: "https://jia-wei-00.github.io/linkedin-clone/",
+    github: "https://github.com/jia-wei-00/linkedin-clone/",
+  },
+  {
+    id: 7,
+    name: "Tesla Clone",
+    description: "Tesla clone frontpage with menu using react and redux",
+    tags: ["react", "redux", "styledComponents"],
+
+    demo: "https://jia-wei-00.github.io/tesla-clone/",
+    github: "https://github.com/jia-wei-00/tesla-clone/",
+  },
+  {
+    id: 8,
+    name: "Portfolio 1",
+    description: "Portfolio 1 design",
+    tags: ["react", "styledComponents"],
+
+    demo: "https://jia-wei-00.github.io/portfolio-website/",
+    github: "https://github.com/jia-wei-00/portfolio-website/",
+  },
+  {
+    id: 9,
+    name: "Portfolio 2",
+    description: "Portfolio 2 design",
+    tags: ["react", "styledComponents"],
+
+    demo: "https://jia-wei-00.github.io/Web-Resume/",
+    github: "https://github.com/jia-wei-00/Web-Resume/",
+  },
+  {
+    id: 10,
+    name: "FYP Project",
+    description:
+      "University final year game project. To raise awareness of epidemiology.",
+    tags: ["unity", "c#"],
+
+    demo: "https://jia-wei-00.github.io/Web-Resume/#/tridemic",
+    preview: "https://jiawei01.itch.io/tridemic",
+  },
+  {
+    id: 11,
+    name: "Game Portfolio",
+    description: "A simple game portfolio created by unity.",
+    tags: ["unity", "c#"],
+
+    demo: "https://jiawei01.itch.io/portfolio",
+    preview: "https://jiawei01.itch.io/portfolio",
   },
 ];

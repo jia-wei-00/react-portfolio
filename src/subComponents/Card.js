@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Github } from "../components/AllSvgs";
+import { Github, Game } from "../components/AllSvgs";
 
 const Box = styled.li`
   width: 16rem;
@@ -53,6 +53,7 @@ const Tag = styled.span`
 const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Link = styled(NavLink)`
@@ -80,7 +81,7 @@ const Git = styled(NavLink)`
 `;
 
 const Card = (props) => {
-  const { id, name, description, tags, demo, github } = props.data;
+  const { id, name, description, tags, demo, github, preview } = props.data;
 
   return (
     <Box key={id}>
@@ -95,9 +96,15 @@ const Card = (props) => {
         <Link to={{ pathname: `${demo}` }} target="_blank">
           Visit
         </Link>
-        <Git to={{ pathname: `${demo}` }} target="_blank">
-          <Github width={30} height={30} />
-        </Git>
+        {github ? (
+          <Git to={{ pathname: `${github}` }} target="_blank">
+            <Github width={30} height={30} />
+          </Git>
+        ) : (
+          <Git to={{ pathname: `${preview}` }} target="_blank">
+            <Game width={30} height={30} />
+          </Git>
+        )}
       </Footer>
     </Box>
   );
