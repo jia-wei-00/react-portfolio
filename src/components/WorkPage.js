@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { darkTheme } from "./Themes";
 import { motion } from "framer-motion";
 
+import BigTitle from "../subComponents/BigTitle";
 import LogoComponents from "../subComponents/LogoComponents";
 import SocialIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
@@ -15,7 +16,8 @@ const Box = styled.div`
   background-color: ${(props) => props.theme.body};
   height: 400vh;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 `;
 
 const Main = styled.div`
@@ -39,8 +41,8 @@ const Rotate = styled.span`
 `;
 
 const WorkPage = () => {
-  const ref = useRef();
-  const yinyang = useRef();
+  const ref = useRef(null);
+  const yinyang = useRef(null);
 
   useEffect(() => {
     let element = ref.current;
@@ -65,7 +67,7 @@ const WorkPage = () => {
         <SocialIcons theme="dark" />
         <PowerButton />
 
-        <Main>
+        <Main ref={ref}>
           {Work.map((d) => (
             <Card key={d.id} data={d} />
           ))}
@@ -73,6 +75,8 @@ const WorkPage = () => {
         <Rotate ref={yinyang}>
           <YinYang width={80} height={80} fill={darkTheme.text} />
         </Rotate>
+
+        <BigTitle text="WORK" top="10%" right="20%" />
       </Box>
     </ThemeProvider>
   );

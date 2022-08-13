@@ -1,4 +1,4 @@
-export const Skills = [
+export const Frontend = [
   {
     id: 1,
     skill: "HTML",
@@ -38,5 +38,28 @@ export const Skills = [
     id: 8,
     skill: "Wordpress",
     level: "Experienced",
+  },
+];
+
+export const Backend = [
+  {
+    id: 1,
+    skill: "Nodejs",
+    level: "Basic",
+  },
+  {
+    id: 2,
+    skill: "Solidity",
+    level: "Basic",
+  },
+  {
+    id: 3,
+    skill: "PHP",
+    level: "Experienced",
+  },
+  {
+    id: 4,
+    skill: "SQL",
+    level: "Basic",
   },
 ];

@@ -7,6 +7,7 @@ import ParticleComponent from "../subComponents/ParticleComponent";
 import PowerButton from "../subComponents/PowerButton";
 
 import astronaut from "../assets/Images/spaceman.png";
+import BigTitle from "../subComponents/BigTitle";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -64,15 +65,6 @@ const Main = styled.div`
   font-style: italic;
 `;
 
-const Title = styled.h1`
-  position: fixed;
-  top: 10%;
-  left: 5%;
-  color: rgba(252, 246, 244, 0.1);
-  font-size: calc(5rem + 5vw);
-  z-index: 0;
-`;
-
 const AboutPage = () => {
   return (
     <ThemeProvider theme={darkTheme}>
@@ -81,7 +73,6 @@ const AboutPage = () => {
         <SocialIcons theme="dark" />
         <PowerButton />
         <ParticleComponent theme="dark" />
-        <Title>ABOUT</Title>
 
         <Spaceman>
           <img src={astronaut} alt="spaceman" />
@@ -103,6 +94,7 @@ const AboutPage = () => {
           <br />I am a positive thinker and I think this helps me the most in
           difficult moments.
         </Main>
+        <BigTitle text="ABOUT" top="10%" left="5%" />
       </Box>
     </ThemeProvider>
   );

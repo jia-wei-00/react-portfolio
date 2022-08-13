@@ -1,33 +1,33 @@
 export const Work = [
   {
     id: 1,
-    name: "Agency Landing Page",
+    name: "GameFi Project",
     description:
-      "It is build on top of the React JS, with styledComponents and GSAP for smooth scrolling animations.",
-    tags: ["react", "gsap", "styledComponents"],
+      "GameFi project with random rarity character upon open card. All smart contract deploy in Binance Smart Chain Testnet. It is build with react and and use Web3 to connect smart contract.",
+    tags: ["react", "redux", "styledComponents", "solidity", "Web3"],
 
-    demo: "https://agency-website-eta.vercel.app/",
-    github: "https://github.com/codebucks27/Agency-website",
+    demo: "https://jia-wei-00.github.io/blockchain/",
+    github: "https://github.com/jia-wei-00/blockchain/",
   },
   {
     id: 2,
-    name: "Job listing website",
+    name: "Amazon Clone",
     description:
-      "A Job listing website build in ReactJS. With searching and filtering functionalities.",
-    tags: ["react", "sass"],
+      "Amazon Clone with add to cart function, create account and login system using react and firebase authentication",
+    tags: ["react", "redux", "firebase"],
 
-    demo: "http://react-job-listing-website.codebucks27.vercel.app/",
-    github: "https://github.com/codebucks27/react-job-listing-website",
+    demo: "https://jia-wei-00.github.io/amazon-clone/",
+    github: "https://github.com/jia-wei-00/amazon-clone/",
   },
   {
     id: 3,
-    name: "Dev.to Clone",
+    name: "Group Chat App",
     description:
-      "A clone of Dev.to build using ReactJS. With realtime fetching of articles from dev.to using API.",
-    tags: ["react", "api", "sass"],
+      "A group chat app using google authentication to login. Everyone can send messege inside.",
+    tags: ["react", "redux", "firebase"],
 
-    demo: "http://devto-clone-codebucks27.vercel.app/",
-    github: "https://github.com/codebucks27/devto-clone",
+    demo: "https://jia-wei-00.github.io/group_chat_app/",
+    github: "https://github.com/jia-wei-00/group_chat_app/",
   },
   {
     id: 4,

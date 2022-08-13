@@ -3,11 +3,12 @@ import styled, { ThemeProvider } from "styled-components";
 import { lightTheme } from "./Themes";
 import { Develope } from "./AllSvgs";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
-import { Skills } from "../data/SkillsData";
+import { Frontend, Backend } from "../data/SkillsData";
 import LogoComponents from "../subComponents/LogoComponents";
 import SocialIcons from "../subComponents/SocialIcons";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import PowerButton from "../subComponents/PowerButton";
+import BigTitle from "../subComponents/BigTitle";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -142,7 +143,7 @@ const MySkillsPage = () => {
           <ul>
             <strong>SKILLS</strong>
             <div>
-              {Skills.map((data) => {
+              {Frontend.map((data) => {
                 return (
                   <li>
                     <TaskAltIcon />
@@ -168,7 +169,7 @@ const MySkillsPage = () => {
           <ul>
             <strong>SKILLS</strong>
             <div>
-              {Skills.map((data) => {
+              {Backend.map((data) => {
                 return (
                   <li>
                     <TaskAltIcon />
@@ -181,6 +182,7 @@ const MySkillsPage = () => {
             </div>
           </ul>
         </Main>
+        <BigTitle text="SKILLS" top="80%" right="30%" />
       </Box>
     </ThemeProvider>
   );

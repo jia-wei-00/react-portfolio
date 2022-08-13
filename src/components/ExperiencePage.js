@@ -10,6 +10,7 @@ import SocialIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
 
 import { Experience } from "../data/ExperienceData";
+import BigTitle from "../subComponents/BigTitle";
 
 const MainContainer = styled.div`
   /* background-image: url(${img}); */
@@ -49,20 +50,10 @@ const Center = styled.div`
   }
 `;
 
-const PageTitle = styled.h1`
-  position: fixed;
-  top: 5rem;
-  left: 5rem;
-  color: rgba(0, 0, 0, 0.1);
-  font-size: calc(5rem + 5vw);
-  z-index: 1;
-`;
-
 const ExperiencePage = () => {
   return (
     <MainContainer>
       <Container>
-        <PageTitle>Experience</PageTitle>
         <LogoComponent />
         <PowerButton />
         <SocialIcons />
@@ -86,6 +77,7 @@ const ExperiencePage = () => {
             })}
           </Timeline>
         </Center>
+        <BigTitle text="EXPERIENCE" top="5rem" left="5rem" />
       </Container>
     </MainContainer>
   );
