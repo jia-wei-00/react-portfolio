@@ -169,7 +169,7 @@ const Main = () => {
         interactive={true}
       />
       <Container>
-        <PowerButton />
+        {/* <PowerButton /> */}
         <LogoComponents theme={click ? "dark" : "light"} />
         <SocialIcons theme={click ? "dark" : "light"} />
         <Center click={click}>
