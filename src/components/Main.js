@@ -9,6 +9,8 @@ import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
 import WaterWave from "react-water-wave";
 import bg from "../assets/Images/bg.jpg";
+import ContactBox from "./ContactBox";
+import { ToastContainer } from "react-toastify";
 
 const MainContainer = styled.div`
   /* background: ${(props) => props.theme.body}; */
@@ -32,13 +34,14 @@ const Container = styled.div`
   padding: 2rem;
 `;
 
-const Contact = styled(NavLink)`
+const Contact = styled.div`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 2rem;
   right: calc(1rem + 2vw);
   text-decoration: none;
   z-index: 1;
+  cursor: pointer;
 `;
 
 const Experience = styled(NavLink)`
@@ -139,6 +142,16 @@ const DarkDiv = styled.div`
 
 const Main = () => {
   const [click, setClick] = useState(false);
+  const [contactBox, setContactBox] = useState(false);
+
+  const close = (data) => {
+    setContactBox(data);
+  };
+
+  const contactFunction = () => {
+    setContactBox(!contactBox);
+    setClick(false);
+  };
 
   return (
     <MainContainer>
@@ -165,15 +178,11 @@ const Main = () => {
             width={click ? 120 : 200}
             height={click ? 120 : 200}
             fill="currentColor"
-            // color={click ? "white" : null}
           />
           <span>click here</span>
         </Center>
 
-        <Contact
-          target="_blank"
-          to={{ pathname: "mailto:leongjw98@gmail.com" }}
-        >
+        <Contact onClick={contactFunction}>
           <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             Say hi...
           </motion.h2>
@@ -206,7 +215,9 @@ const Main = () => {
         </BottomBar>
       </Container>
 
-      {click ? <Intro /> : null}
+      {click && <Intro />}
+      {contactBox && <ContactBox close={close} />}
+      <ToastContainer theme="dark" />
     </MainContainer>
   );
 };
