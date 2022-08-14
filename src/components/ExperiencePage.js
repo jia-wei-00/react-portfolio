@@ -11,8 +11,9 @@ import PowerButton from "../subComponents/PowerButton";
 
 import { Experience } from "../data/ExperienceData";
 import BigTitle from "../subComponents/BigTitle";
+import { motion } from "framer-motion";
 
-const MainContainer = styled.div`
+const MainContainer = styled(motion.div)`
   /* background-image: url(${img}); */
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,9 +51,27 @@ const Center = styled.div`
   }
 `;
 
+//Framer-motion configuration
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+
+    transition: {
+      staggerChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+};
+
 const ExperiencePage = () => {
   return (
-    <MainContainer>
+    <MainContainer
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
+    >
       <Container>
         <LogoComponent />
         <PowerButton />

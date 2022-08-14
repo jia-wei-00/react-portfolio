@@ -7,8 +7,9 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import DoneIcon from "@mui/icons-material/Done";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const List = styled.ul`
+const List = styled(motion.ul)`
   list-style-type: none;
   border: 2px solid ${(props) => props.theme.text};
   padding: 10px;
@@ -45,7 +46,7 @@ const List = styled.ul`
   }
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
   font-family: "Karla", sans-serif;
   font-weight: 700;
 
@@ -60,11 +61,24 @@ const Title = styled.div`
   }
 `;
 
+const Item = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+    },
+  },
+};
+
 const WorkTimeline = (props) => {
   return (
     <TimelineItem>
       <TimelineOppositeContent color="text.secondary">
-        <Title>
+        <Title variants={Item}>
           <div>
             {props.data.name} <br /> ({props.data.date})
           </div>
@@ -75,7 +89,7 @@ const WorkTimeline = (props) => {
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent>
-        <List>
+        <List variants={Item}>
           {props.data.desc.map((data) => {
             return (
               <div>

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Facebook, Github, Instagram, Whatsapp } from "../components/AllSvgs";
 import { darkTheme } from "../components/Themes";
+import { motion } from "framer-motion";
 
 const Icons = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const Icons = styled.div`
   }
 `;
 
-const Line = styled.span`
+const Line = styled(motion.span)`
   width: 2px;
   height: 8rem;
   background-color: ${(props) =>
@@ -31,7 +32,11 @@ const Line = styled.span`
 const SocialIcons = (props) => {
   return (
     <Icons>
-      <div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1 }}
+      >
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
@@ -43,8 +48,12 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
           />
         </NavLink>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.2 }}
+      >
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
@@ -56,8 +65,12 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
           />
         </NavLink>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.4 }}
+      >
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
@@ -69,8 +82,12 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
           />
         </NavLink>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.6 }}
+      >
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
@@ -82,9 +99,14 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
           />
         </NavLink>
-      </div>
+      </motion.div>
 
-      <Line theme={props.theme} />
+      <Line
+        theme={props.theme}
+        initial={{ height: 0 }}
+        animate={{ height: "8rem" }}
+        transition={{ type: "spring", duration: 1, delay: 0.8 }}
+      />
     </Icons>
   );
 };
