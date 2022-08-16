@@ -41,6 +41,10 @@ const Contact = styled.div`
   text-decoration: none;
   z-index: 1;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  }
 `;
 
 const Experience = styled(NavLink)`
@@ -51,6 +55,11 @@ const Experience = styled(NavLink)`
   transform: translate(25%, -50%) rotate(90deg);
   text-decoration: none;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    text-shadow: ${(props) => props.click && `1px 1px 8px ${props.theme.text}`};
+    color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  }
 `;
 
 const Work = styled(NavLink)`
@@ -61,6 +70,10 @@ const Work = styled(NavLink)`
   transform: translate(-50%, -50%) rotate(-90deg);
   text-decoration: none;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    text-shadow: ${(props) => props.click && `1px 1px 8px ${props.theme.text}`};
+  }
 `;
 
 const BottomBar = styled.div`
@@ -78,6 +91,10 @@ const About = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   text-decoration: none;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    color: ${(props) => props.theme.text};
+  }
 `;
 
 const Skills = styled(NavLink)`
@@ -137,6 +154,14 @@ const DarkDiv = styled.div`
   height: ${(props) => (props.click ? "100%" : "0%")};
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
+
+  @media (max-width: 768px) {
+    bottom: 50%;
+    right: unset;
+    width: ${(props) => (props.click ? "100%" : "0%")};
+    height: ${(props) => (props.click ? "50%" : "0%")};
+    transition: width 0.5s ease, height 1s ease 0.5s;
+  }
 `;
 
 const Main = () => {
@@ -173,14 +198,14 @@ const Main = () => {
         <Center click={click}>
           <YinYang
             onClick={() => setClick(!click)}
-            width={click ? 120 : 200}
-            height={click ? 120 : 200}
+            width={click ? "calc(5vw + 40px)" : "calc(7vw + 60px)"}
+            height={click ? "calc(5vw + 40px)" : "calc(7vw + 60px)"}
             fill="currentColor"
           />
           <span>click here</span>
         </Center>
 
-        <Contact onClick={contactFunction}>
+        <Contact onClick={contactFunction} click={click}>
           <motion.h2
             initial={{
               y: -200,
@@ -197,7 +222,7 @@ const Main = () => {
           </motion.h2>
         </Contact>
 
-        <Experience to="/experience">
+        <Experience to="/experience" click={click}>
           <motion.h2
             initial={{
               y: -200,

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Facebook, Github, Instagram, Whatsapp } from "../components/AllSvgs";
 import { darkTheme } from "../components/Themes";
 import { motion } from "framer-motion";
+import { dark } from "@mui/material/styles/createPalette";
 
 const Icons = styled.div`
   display: flex;
@@ -27,9 +28,21 @@ const Line = styled(motion.span)`
   height: 8rem;
   background-color: ${(props) =>
     props.theme === "dark" ? darkTheme.text : darkTheme.body};
+
+  @media (max-width: 768px) {
+    background-color: ${darkTheme.body};
+  }
 `;
 
 const SocialIcons = (props) => {
+  const [color, setColor] = useState(darkTheme.text);
+
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setColor(darkTheme.body);
+    }
+  }, []);
+
   return (
     <Icons>
       <motion.div
@@ -45,7 +58,7 @@ const SocialIcons = (props) => {
           <Whatsapp
             width={30}
             height={25}
-            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "dark" ? color : darkTheme.body}
           />
         </NavLink>
       </motion.div>
@@ -62,7 +75,7 @@ const SocialIcons = (props) => {
           <Github
             width={30}
             height={25}
-            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "dark" ? color : darkTheme.body}
           />
         </NavLink>
       </motion.div>
@@ -79,7 +92,7 @@ const SocialIcons = (props) => {
           <Instagram
             width={30}
             height={25}
-            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "dark" ? color : darkTheme.body}
           />
         </NavLink>
       </motion.div>
@@ -96,7 +109,7 @@ const SocialIcons = (props) => {
           <Facebook
             width={30}
             height={25}
-            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "dark" ? color : darkTheme.body}
           />
         </NavLink>
       </motion.div>

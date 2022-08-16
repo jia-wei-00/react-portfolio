@@ -10,7 +10,7 @@ const Box = styled(motion.div)`
   transform: translate(-50%, -50%);
 
   width: 65vw;
-  height: 55vh;
+  height: 70vh;
   display: flex;
 
   background: linear-gradient(
@@ -31,6 +31,43 @@ const Box = styled(motion.div)`
   border-right: 2px solid ${(props) => props.theme.text};
 
   z-index: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    border-top: 2px solid ${(props) => props.theme.body};
+    border-bottom: 2px solid ${(props) => props.theme.text};
+    border-left: none;
+    border-right: none;
+    background: none;
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      background: linear-gradient(
+        to bottom,
+        ${(props) => props.theme.body} 50%,
+        ${(props) => props.theme.text} 50%
+      );
+    }
+
+    &::after {
+      content: "";
+      width: 2px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      position: absolute;
+      background: linear-gradient(
+        to bottom,
+        ${(props) => props.theme.body} 50%,
+        ${(props) => props.theme.text} 50%
+      );
+    }
+  }
 `;
 
 const SubBox = styled.div`
@@ -45,6 +82,18 @@ const SubBox = styled.div`
     transform: translate(-50%, 0%);
     width: 100%;
     height: auto;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      position: block;
+      transform: translate(-50%, 0%);
+      width: 16rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 50%;
   }
 `;
 
@@ -68,7 +117,7 @@ const Intro = () => {
   return (
     <Box
       initial={{ height: 0 }}
-      animate={{ height: "55vh" }}
+      animate={{ height: "70vh" }}
       transition={{ type: "spring", duration: 2, delay: 1 }}
     >
       <SubBox>
