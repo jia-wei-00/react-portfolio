@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Facebook, Github, Instagram, Whatsapp } from "../components/AllSvgs";
 import { darkTheme } from "../components/Themes";
 import { motion } from "framer-motion";
-import { dark } from "@mui/material/styles/createPalette";
+import { useMediaQuery } from "react-responsive";
 
 const Icons = styled.div`
   display: flex;
@@ -36,19 +36,16 @@ const Line = styled(motion.span)`
 
 const SocialIcons = (props) => {
   const [color, setColor] = useState(darkTheme.text);
-  const [windowWidth, setWindowWidth] = useState();
+
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
 
   useEffect(() => {
-    window.addEventListener("resize", function () {
-      setWindowWidth(window.innerWidth);
-    });
-
-    if (windowWidth <= 768) {
+    if (isMobile) {
       setColor(darkTheme.body);
     } else {
       setColor(darkTheme.text);
     }
-  }, [windowWidth]);
+  }, [isMobile]);
 
   return (
     <Icons>

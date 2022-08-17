@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
@@ -8,6 +8,7 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import DoneIcon from "@mui/icons-material/Done";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const List = styled(motion.ul)`
   list-style-type: none;
@@ -93,24 +94,11 @@ const Item = {
 };
 
 const WorkTimeline = (props) => {
-  const [display, setDisplay] = useState();
-  const [windowWidth, setWindowWidth] = useState();
-
-  useEffect(() => {
-    window.addEventListener("resize", function () {
-      setWindowWidth(window.innerWidth);
-    });
-
-    if (windowWidth <= 768) {
-      setDisplay("mobile");
-    } else {
-      setDisplay("desktop");
-    }
-  }, [windowWidth]);
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
 
   return (
     <>
-      {display === "desktop" ? (
+      {!isMobile ? (
         <TimelineItem>
           <TimelineOppositeContent color="text.secondary">
             <Title variants={Item}>
