@@ -36,12 +36,19 @@ const Line = styled(motion.span)`
 
 const SocialIcons = (props) => {
   const [color, setColor] = useState(darkTheme.text);
+  const [windowWidth, setWindowWidth] = useState();
 
   useEffect(() => {
-    if (window.innerWidth <= 768) {
+    window.addEventListener("resize", function () {
+      setWindowWidth(window.innerWidth);
+    });
+
+    if (windowWidth <= 768) {
       setColor(darkTheme.body);
+    } else {
+      setColor(darkTheme.text);
     }
-  }, []);
+  }, [windowWidth]);
 
   return (
     <Icons>

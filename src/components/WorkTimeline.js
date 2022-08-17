@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
@@ -42,7 +42,16 @@ const List = styled(motion.ul)`
       text-align: justify;
       font-family: "Karla", sans-serif;
       font-weight: 700;
+
+      @media (max-width: 768px) {
+        text-align: left;
+        padding: 10px;
+      }
     }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
   }
 `;
 
@@ -59,6 +68,15 @@ const Title = styled(motion.div)`
       background: ${(props) => props.theme.text};
     }
   }
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+`;
+
+const Box = styled.div`
+  z-index: 10;
+  padding: 0 30px;
 `;
 
 const Item = {
@@ -75,32 +93,67 @@ const Item = {
 };
 
 const WorkTimeline = (props) => {
+  const [display, setDisplay] = useState();
+  const [windowWidth, setWindowWidth] = useState();
+
+  useEffect(() => {
+    window.addEventListener("resize", function () {
+      setWindowWidth(window.innerWidth);
+    });
+
+    if (windowWidth <= 768) {
+      setDisplay("mobile");
+    } else {
+      setDisplay("desktop");
+    }
+  }, [windowWidth]);
+
   return (
-    <TimelineItem>
-      <TimelineOppositeContent color="text.secondary">
-        <Title variants={Item}>
-          <div>
-            {props.data.name} <br /> ({props.data.date})
-          </div>
-        </Title>
-      </TimelineOppositeContent>
-      <TimelineSeparator>
-        <TimelineDot variant="outlined" />
-        <TimelineConnector />
-      </TimelineSeparator>
-      <TimelineContent>
-        <List variants={Item}>
-          {props.data.desc.map((data) => {
-            return (
+    <>
+      {display === "desktop" ? (
+        <TimelineItem>
+          <TimelineOppositeContent color="text.secondary">
+            <Title variants={Item}>
               <div>
-                <DoneIcon />
-                <li>{data}</li>
+                {props.data.name} <br /> ({props.data.date})
               </div>
-            );
-          })}
-        </List>
-      </TimelineContent>
-    </TimelineItem>
+            </Title>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot variant="outlined" />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <List variants={Item}>
+              {props.data.desc.map((data) => {
+                return (
+                  <div>
+                    <DoneIcon />
+                    <li>{data}</li>
+                  </div>
+                );
+              })}
+            </List>
+          </TimelineContent>
+        </TimelineItem>
+      ) : (
+        <Box style={{ zIndex: 10 }}>
+          <Title>
+            {props.data.name} <br /> ({props.data.date})
+          </Title>
+          <List variants={Item}>
+            {props.data.desc.map((data) => {
+              return (
+                <div>
+                  <DoneIcon />
+                  <li>{data}</li>
+                </div>
+              );
+            })}
+          </List>
+        </Box>
+      )}
+    </>
   );
 };
 

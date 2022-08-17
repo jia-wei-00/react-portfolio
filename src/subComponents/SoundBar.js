@@ -27,6 +27,11 @@ const Box = styled(motion.div)`
   & > *:nth-child(5) {
     animation-delay: 0.6s;
   }
+
+  @media (max-width: 768px) {
+    top: 7rem;
+    left: 4rem;
+  }
 `;
 
 const play = keyframes`

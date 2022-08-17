@@ -4,6 +4,7 @@ import img from "../assets/Images/experience-bg.jpg";
 import Timeline from "@mui/lab/Timeline";
 import WorkTimeline from "./WorkTimeline";
 import WaterWave from "react-water-wave";
+import DoneIcon from "@mui/icons-material/Done";
 
 import LogoComponent from "../subComponents/LogoComponents";
 import SocialIcons from "../subComponents/SocialIcons";
