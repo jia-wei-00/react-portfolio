@@ -8,8 +8,9 @@ import PowerButton from "../subComponents/PowerButton";
 
 import astronaut from "../assets/Images/spaceman.png";
 import BigTitle from "../subComponents/BigTitle";
+import { motion } from "framer-motion";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -65,10 +66,28 @@ const Main = styled.div`
   font-style: italic;
 `;
 
+//Framer-motion configuration
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+
+    transition: {
+      staggerChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+};
+
 const AboutPage = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box>
+      <Box
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      >
         <LogoComponents theme="dark" />
         <SocialIcons theme="dark" />
         <PowerButton />

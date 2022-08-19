@@ -11,7 +11,7 @@ import bg from "../assets/Images/bg.jpg";
 import ContactBox from "./ContactBox";
 import { ToastContainer } from "react-toastify";
 
-const MainContainer = styled.div`
+const MainContainer = styled(motion.div)`
   /* background: ${(props) => props.theme.body}; */
   width: 100vw;
   height: 100vh;
@@ -167,6 +167,7 @@ const DarkDiv = styled.div`
 const Main = () => {
   const [click, setClick] = useState(false);
   const [contactBox, setContactBox] = useState(false);
+  const [exit, setExit] = useState();
 
   const close = (data) => {
     setContactBox(data);
@@ -177,8 +178,26 @@ const Main = () => {
     setClick(false);
   };
 
+  const swipeLeft = {
+    x: "-100%",
+    opacity: 0,
+    transition: { duration: 0.5 },
+  };
+
+  const swipeUp = {
+    y: "-100%",
+    opacity: 0,
+    transition: { duration: 0.5 },
+  };
+
+  const swipeRight = {
+    x: "100%",
+    opacity: 0,
+    transition: { duration: 0.5 },
+  };
+
   return (
-    <MainContainer>
+    <MainContainer exit={exit}>
       <DarkDiv click={click} />
       <WaterWave
         style={{
@@ -222,7 +241,11 @@ const Main = () => {
           </motion.h2>
         </Contact>
 
-        <Experience to="/experience" click={click}>
+        <Experience
+          to="/experience"
+          click={click}
+          onClick={() => setExit(swipeLeft)}
+        >
           <motion.h2
             initial={{
               y: -200,
@@ -239,7 +262,7 @@ const Main = () => {
           </motion.h2>
         </Experience>
 
-        <Work to="/work" click={click}>
+        <Work to="/work" click={click} onClick={() => setExit(swipeRight)}>
           <motion.h2
             initial={{
               y: -200,
@@ -257,7 +280,7 @@ const Main = () => {
         </Work>
 
         <BottomBar>
-          <About to="/about" click={click}>
+          <About to="/about" click={click} onClick={() => setExit(swipeUp)}>
             <motion.h2
               initial={{
                 y: 200,
@@ -274,7 +297,7 @@ const Main = () => {
             </motion.h2>
           </About>
 
-          <Skills to="/skills">
+          <Skills to="/skills" onClick={() => setExit(swipeUp)}>
             <motion.h2
               initial={{
                 y: 200,

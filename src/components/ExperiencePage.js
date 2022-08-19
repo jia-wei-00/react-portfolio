@@ -4,7 +4,6 @@ import img from "../assets/Images/experience-bg.jpg";
 import Timeline from "@mui/lab/Timeline";
 import WorkTimeline from "./WorkTimeline";
 import WaterWave from "react-water-wave";
-import DoneIcon from "@mui/icons-material/Done";
 
 import LogoComponent from "../subComponents/LogoComponents";
 import SocialIcons from "../subComponents/SocialIcons";
@@ -15,7 +14,6 @@ import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
 
 const MainContainer = styled(motion.div)`
-  /* background-image: url(${img}); */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

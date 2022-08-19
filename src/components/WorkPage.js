@@ -12,12 +12,16 @@ import { Work } from "../data/WorkData";
 import Card from "../subComponents/Card";
 import { YinYang } from "./AllSvgs";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
-  height: 780vh;
+  height: 600vh;
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (max-width: 425px) {
+    height: 700vh;
+  }
 `;
 
 const Main = styled(motion.div)`
@@ -74,7 +78,12 @@ const WorkPage = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box>
+      <Box
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      >
         <LogoComponents theme="dark" />
         <SocialIcons theme="dark" />
         <PowerButton />
