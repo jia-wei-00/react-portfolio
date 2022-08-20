@@ -30,8 +30,14 @@ const Main = styled(motion.div)`
   left: calc(10rem + 15vw);
   height: 40vh;
   display: flex;
+  align-items: center;
 
   color: white;
+
+  @media (max-width: 768px) {
+    top: 16rem;
+    left: calc(5rem + 10vw);
+  }
 `;
 
 const Rotate = styled.span`
