@@ -30,7 +30,7 @@ const Line = styled(motion.span)`
     props.theme === "dark" ? darkTheme.text : darkTheme.body};
 
   @media (max-width: 768px) {
-    background-color: ${darkTheme.body};
+    background-color: ${(props) => props.color};
   }
 `;
 
@@ -40,8 +40,12 @@ const SocialIcons = (props) => {
   const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
 
   useEffect(() => {
-    if (isMobile) {
-      setColor(darkTheme.body);
+    if (!props.page) {
+      if (isMobile) {
+        setColor(darkTheme.body);
+      } else {
+        setColor(darkTheme.text);
+      }
     } else {
       setColor(darkTheme.text);
     }
@@ -123,6 +127,7 @@ const SocialIcons = (props) => {
         initial={{ height: 0 }}
         animate={{ height: "8rem" }}
         transition={{ type: "spring", duration: 1, delay: 0.8 }}
+        color={color}
       />
     </Icons>
   );

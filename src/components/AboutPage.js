@@ -89,7 +89,7 @@ const AboutPage = () => {
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
       >
         <LogoComponents theme="dark" />
-        <SocialIcons theme="dark" />
+        <SocialIcons theme="dark" page="about" />
         <PowerButton />
         <ParticleComponent theme="dark" />
 

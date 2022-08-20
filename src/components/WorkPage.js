@@ -85,7 +85,7 @@ const WorkPage = () => {
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
       >
         <LogoComponents theme="dark" />
-        <SocialIcons theme="dark" />
+        <SocialIcons theme="dark" page="work" />
         <PowerButton />
 
         <Main ref={ref} variants={container} initial="hidden" animate="show">
