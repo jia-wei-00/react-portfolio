@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Me from "../assets/Images/profile-img.png";
+import CV from "../assets/Resume/resume.pdf";
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -97,7 +98,7 @@ const SubBox = styled.div`
   }
 `;
 
-const Text = styled.div`
+const Text = styled(motion.div)`
   font-size: calc(1em + 1.5vw);
   color: ${(props) => props.theme.body};
   padding: 2rem;
@@ -111,6 +112,34 @@ const Text = styled.div`
     color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.6)`};
     font-size: calc(0.5rem + 1.5vw);
   }
+
+  button {
+    background: ${(props) => props.theme.body};
+    width: 200px;
+    color: ${(props) => props.theme.text} !important;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid ${(props) => props.theme.body};
+    transition: all 0.5s ease;
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover {
+      background-color: transparent;
+      color: ${(props) => props.theme.body} !important;
+    }
+
+    @media (max-width: 768px) {
+      padding: 5px;
+      width: 100px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Intro = () => {
@@ -121,10 +150,19 @@ const Intro = () => {
       transition={{ type: "spring", duration: 2, delay: 1 }}
     >
       <SubBox>
-        <Text>
+        <Text
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
           <h1>Hi,</h1>
           <h3>I'm Jia Wei</h3>
           <h6>Frontend developer that create simple and beautiful website.</h6>
+          <a href={CV} download="Leong_Jia_Wei_Resume.pdf">
+            <button>
+              <h6>Download CV</h6>
+            </button>
+          </a>
         </Text>
       </SubBox>
       <SubBox>
