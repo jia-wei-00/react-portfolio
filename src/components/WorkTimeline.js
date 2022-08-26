@@ -99,7 +99,7 @@ const WorkTimeline = (props) => {
   return (
     <>
       {!isMobile ? (
-        <TimelineItem>
+        <TimelineItem style={{ zIndex: 10 }}>
           <TimelineOppositeContent color="text.secondary">
             <Title variants={Item}>
               <div>

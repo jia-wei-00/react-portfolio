@@ -26,8 +26,8 @@ export const Frontend = [
   },
   {
     id: 6,
-    skill: "Firebase",
-    level: "Basic",
+    skill: "Wordpress",
+    level: "Experienced",
   },
   {
     id: 7,
@@ -36,16 +36,16 @@ export const Frontend = [
   },
   {
     id: 8,
-    skill: "Wordpress",
-    level: "Experienced",
+    skill: "Firebase",
+    level: "Basic",
   },
 ];
 
 export const Backend = [
   {
     id: 1,
-    skill: "Nodejs",
-    level: "Basic",
+    skill: "PHP",
+    level: "Experienced",
   },
   {
     id: 2,
@@ -54,12 +54,45 @@ export const Backend = [
   },
   {
     id: 3,
-    skill: "PHP",
-    level: "Experienced",
+    skill: "Nodejs",
+    level: "Basic",
   },
   {
     id: 4,
     skill: "SQL",
+    level: "Basic",
+  },
+];
+
+export const Others = [
+  {
+    id: 1,
+    skill: "Unity",
+    level: "Basic",
+  },
+  {
+    id: 2,
+    skill: "RPG Maker",
+    level: "Basic",
+  },
+  {
+    id: 3,
+    skill: "Photoshop",
+    level: "Basic",
+  },
+  {
+    id: 4,
+    skill: "Illustrator",
+    level: "Basic",
+  },
+  {
+    id: 5,
+    skill: "After Effect",
+    level: "Basic",
+  },
+  {
+    id: 6,
+    skill: "Premiere Pro",
     level: "Basic",
   },
 ];

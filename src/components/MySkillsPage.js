@@ -1,26 +1,30 @@
-import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import React, { useState, useEffect } from "react";
+import styled, { ThemeProvider, keyframes } from "styled-components";
 import { lightTheme } from "./Themes";
-import { Develope } from "./AllSvgs";
+import { Develope, Game } from "./AllSvgs";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
-import { Frontend, Backend } from "../data/SkillsData";
+import { Frontend, Backend, Others } from "../data/SkillsData";
 import LogoComponents from "../subComponents/LogoComponents";
 import SocialIcons from "../subComponents/SocialIcons";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import PowerButton from "../subComponents/PowerButton";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-evenly;
   align-items: center;
+  padding-left: 10vh;
 
   @media only screen and (max-width: 767px) {
+    display: flex;
     flex-direction: column;
     height: auto;
     padding: 5.5rem 0;
@@ -124,6 +128,27 @@ const Description = styled.div`
   }
 `;
 
+const shake = keyframes`
+from {
+  transform: translateY(-50%);
+}
+to {
+  transform: translateY(0%);
+}
+`;
+
+const Arrow = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%);
+  animation: ${shake} infinite 1s alternate;
+
+  & > :first-child {
+    font-size: calc(2em + 1vw);
+  }
+`;
+
 //Framer-motion configuration
 const container = {
   hidden: { opacity: 0 },
@@ -138,6 +163,23 @@ const container = {
 };
 
 const MySkillsPage = () => {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const check = () => {
+      if (window.pageYOffset < 500) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", check);
+    return () => {
+      window.removeEventListener("scroll", check);
+    };
+  }, []);
+
   return (
     <ThemeProvider theme={lightTheme}>
       <Box
@@ -150,13 +192,13 @@ const MySkillsPage = () => {
         <SocialIcons theme="light" />
         <PowerButton />
         <ParticleComponent theme="light" />
+
         <Main>
           <Title>
             <Develope width={40} height={40} /> Frontend Development
           </Title>
           <Description>
-            I have experience in frontend development using both CMS and
-            codebase.
+            Experienced in frontend development using both CMS and codebase.
           </Description>
 
           <ul>
@@ -201,7 +243,38 @@ const MySkillsPage = () => {
             </div>
           </ul>
         </Main>
+        <Main>
+          <Title>
+            <Game width={40} height={40} />
+            Others
+          </Title>
+          <Description>
+            Experienced in game development, designing and video editing while
+            studying in my university.
+          </Description>
+
+          <ul>
+            <strong>SKILLS</strong>
+            <div>
+              {Others.map((data) => {
+                return (
+                  <li>
+                    <TaskAltIcon />
+                    <span>
+                      {data.skill}({data.level})
+                    </span>
+                  </li>
+                );
+              })}
+            </div>
+          </ul>
+        </Main>
         <BigTitle text="SKILLS" top="80%" right="30%" />
+        {visible && (
+          <Arrow>
+            <KeyboardDoubleArrowDownIcon />
+          </Arrow>
+        )}
       </Box>
     </ThemeProvider>
   );
