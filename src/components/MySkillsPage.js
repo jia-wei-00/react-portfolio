@@ -250,7 +250,7 @@ const MySkillsPage = () => {
           </Title>
           <Description>
             Experienced in game development, designing and video editing while
-            studying in my university.
+            studying in university.
           </Description>
 
           <ul>

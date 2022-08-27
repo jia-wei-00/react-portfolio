@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Facebook, Github, Instagram, Whatsapp } from "../components/AllSvgs";
+import { Facebook, Github, Linkedin, Whatsapp } from "../components/AllSvgs";
 import { darkTheme } from "../components/Themes";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
@@ -95,9 +95,9 @@ const SocialIcons = (props) => {
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
-          to={{ pathname: "https://www.instagram.com/jia_wei98_/" }}
+          to={{ pathname: "https://www.linkedin.com/in/leong-jia-wei-/" }}
         >
-          <Instagram
+          <Linkedin
             width={30}
             height={25}
             fill={props.theme === "dark" ? color : darkTheme.body}
