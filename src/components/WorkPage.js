@@ -14,13 +14,13 @@ import { YinYang } from "./AllSvgs";
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
-  height: 650vh;
+  height: 700vh;
   position: relative;
   display: flex;
   align-items: center;
 
   @media (max-width: 425px) {
-    height: 700vh;
+    height: 750vh;
   }
 `;
 

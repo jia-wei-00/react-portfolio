@@ -102,4 +102,13 @@ export const Work = [
     demo: "https://jiawei01.itch.io/portfolio",
     preview: "https://jiawei01.itch.io/portfolio",
   },
+  {
+    id: 12,
+    name: "React Calculator",
+    description: "A simple calculator build with react.",
+    tags: ["react", "css"],
+
+    demo: "https://jia-wei-react-calculator.vercel.app/",
+    github: "https://github.com/jia-wei-00/react-calculator",
+  },
 ];
