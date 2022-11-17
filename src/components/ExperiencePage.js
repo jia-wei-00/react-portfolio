@@ -75,18 +75,6 @@ const ExperiencePage = () => {
         <LogoComponent />
         <PowerButton />
         <SocialIcons />
-        <WaterWave
-          style={{
-            position: "fixed",
-            width: "100vw",
-            height: "100vh",
-            backgroundSize: "cover",
-            background: `url(${img}) no-repeat center center fixed`,
-          }}
-          dropRadius={50}
-          perturbance={0.05}
-          interactive={true}
-        />
 
         <Center>
           <Timeline position="alternate">
